@@ -11,6 +11,7 @@ OrderGoodsService
 Используемые библиотеки
 -----------------------
 
-* Spring Boot
-* Spring Security
-* Hibernate
+* Spring Framework
+  * Spring Boot
+  * Spring Security
+  * Hibernate
