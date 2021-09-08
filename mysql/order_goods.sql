@@ -1,15 +1,15 @@
-CREATE DATABASE  IF NOT EXISTS `order_goods` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+CREATE DATABASE  IF NOT EXISTS `order_goods` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `order_goods`;
--- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+-- MySQL dump 10.15  Distrib 10.0.35-MariaDB, for Linux (x86_64)
 --
 -- Host: localhost    Database: order_goods
 -- ------------------------------------------------------
--- Server version	8.0.14
+-- Server version	10.0.35-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `order_goods`;
 
 DROP TABLE IF EXISTS `daysordermove_view`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `daysordermove_view` (
   `daysordermoveid` varchar(40) NOT NULL,
   `cntkod` varchar(40) DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `daysordermove_view` (
   `cntadresstr` varchar(256) DEFAULT NULL,
   `indstr` varchar(3) DEFAULT NULL,
   PRIMARY KEY (`daysordermoveid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `daysordermove_view` (
 
 LOCK TABLES `daysordermove_view` WRITE;
 /*!40000 ALTER TABLE `daysordermove_view` DISABLE KEYS */;
-INSERT INTO `daysordermove_view` VALUES ('381796','1158','ООО \"Молторг\"','09.03.2020 08:30','ул.Хохрякова, д.22, киоск \"Первый вкус\"','ХБИ'),('382092','1158','ООО \"Молторг\"','09.03.2020 10:35','ул.Хохрякова, д.22, киоск \"Первый вкус\"','МКИ');
+INSERT INTO `daysordermove_view` VALUES ('381796','1234','ООО \"Молторг\"','09.03.2020 08:30','ул.Хохрякова, д.22, киоск \"Первый вкус\"','ХБИ'),('382092','1234','ООО \"Молторг\"','09.03.2020 10:35','ул.Хохрякова, д.22, киоск \"Первый вкус\"','МКИ');
 /*!40000 ALTER TABLE `daysordermove_view` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,7 +51,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `daysordermoveauth_view`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `daysordermoveauth_view` (
   `cntid` varchar(40) NOT NULL,
   `cntkod` varchar(40) DEFAULT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `daysordermoveauth_view` (
   `cntadres` varchar(256) DEFAULT NULL,
   `tokenall` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`cntid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `daysordermoveauth_view` (
 
 LOCK TABLES `daysordermoveauth_view` WRITE;
 /*!40000 ALTER TABLE `daysordermoveauth_view` DISABLE KEYS */;
-INSERT INTO `daysordermoveauth_view` VALUES ('12943','1158','ООО \"Молторг\"','ул.Хохрякова, д.22, киоск \"Первый вкус\"','82fcf9f268616f634c45ce9e71b4bafa');
+INSERT INTO `daysordermoveauth_view` VALUES ('12943','1234','ООО \"Молторг\"','ул.Хохрякова, д.22, киоск \"Первый вкус\"','25d55ad283aa400af464c76d713c07ad');
 /*!40000 ALTER TABLE `daysordermoveauth_view` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,7 +78,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `daysordermovecontent_view`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `daysordermovecontent_view` (
   `daysordermovecontentid` varchar(40) NOT NULL,
   `daysordermoveidstr` varchar(40) DEFAULT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE `daysordermovecontent_view` (
   `amountstr` varchar(40) DEFAULT NULL,
   `flagacceptstr` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`daysordermovecontentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,13 +105,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `daysordermoverole`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `daysordermoverole` (
   `daysordermoveroleid` bigint(11) NOT NULL DEFAULT '50',
   `userid` bigint(11) DEFAULT NULL,
   `roleid` bigint(11) DEFAULT NULL,
   PRIMARY KEY (`daysordermoveroleid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,7 +120,7 @@ CREATE TABLE `daysordermoverole` (
 
 LOCK TABLES `daysordermoverole` WRITE;
 /*!40000 ALTER TABLE `daysordermoverole` DISABLE KEYS */;
-INSERT INTO `daysordermoverole` VALUES (1,-45,1),(2,-46,1),(50,3,1);
+INSERT INTO `daysordermoverole` VALUES (50,3,1);
 /*!40000 ALTER TABLE `daysordermoverole` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,14 +130,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `daysordermoveuser`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `daysordermoveuser` (
   `daysordermoveuserid` int(11) DEFAULT '50',
   `userid` bigint(11) NOT NULL AUTO_INCREMENT,
   `cntkod` varchar(128) DEFAULT NULL,
   `pass` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,7 +146,7 @@ CREATE TABLE `daysordermoveuser` (
 
 LOCK TABLES `daysordermoveuser` WRITE;
 /*!40000 ALTER TABLE `daysordermoveuser` DISABLE KEYS */;
-INSERT INTO `daysordermoveuser` VALUES (4,-46,'10004','$2a$2a$10$2hzXTHC2MvVxnksWNxQ.8u.EodlNKxBlp282NoOgh/IBzWPaGIXyG'),(5,-45,'10005','$2a$10$Fqeqr/QcQaql76YhP/3VheI/ql912YQ1m08lJg.z7Dj5ATvbKy/ru'),(50,3,'1158','$2a$10$UeINC5Ah1KfeY85qNAlrHuTUbcXQ3Kt1j2JuToyQjudfeDggo10yO');
+INSERT INTO `daysordermoveuser` VALUES (50,3,'1234','$2a$10$UeINC5Ah1KfeY85qNAlrHuTUbcXQ3Kt1j2JuToyQjudfeDggo10yO');
 /*!40000 ALTER TABLE `daysordermoveuser` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,12 +156,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `domroleview`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `domroleview` (
   `roleid` bigint(20) NOT NULL,
   `rolename` varchar(16) DEFAULT NULL,
   PRIMARY KEY (`roleid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -183,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-23 21:43:34
+-- Dump completed on 2021-09-08 14:00:33
